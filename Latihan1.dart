@@ -5,18 +5,18 @@ void main() {
   String alamat = "JL. Prof. Soedarto, SH, Tembalang";
   bool isBuka = true;
 
-  List<String> daftarMakanan = [
-    'Kepiting Rebus (40rb)',
-    'Nasi Goreng (20rb)',
-    'Udang Asam Manis (50rb)',
-    'Sate Cumi (30rb)'
-  ];
+  Map<String, String> daftarMakanan = {
+    'Kepiting Rebus': '40rb',
+    'Nasi Goreng': '20rb',
+    'Udang Asam Manis': '50rb',
+    'Sate Cumi': '30rb'
+  };
 
-  List<String> daftarMinuman = [
-    'Es Jeruk (5rb)',
-    'Es Teh (2rb)',
-    'Es Jus (6rb)'
-  ];
+  Map<String, String> daftarMinuman = {
+    'Es Jeruk': '5rb',
+    'Es Teh': '2rb',
+    'Es Jus': '6rb'
+  };
 
   print('Data Restoran');
   print('---' * 20);
@@ -27,12 +27,12 @@ void main() {
   print('Status Buka: ${isBuka ? "Buka" : "Tutup"}');
   
   print('\nDaftar Makanan:');
-  for (var makanan in daftarMakanan) {
-    print('- $makanan');
-  }
+  daftarMakanan.forEach((makanan, harga) {
+    print('- $makanan ($harga)');
+  });
   
   print('\nDaftar Minuman:');
-  for (var minuman in daftarMinuman) {
-    print('- $minuman');
-  }
+  daftarMinuman.forEach((minuman, harga) {
+    print('- $minuman ($harga)');
+  });
 }
